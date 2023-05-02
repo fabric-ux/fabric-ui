@@ -1,0 +1,27 @@
+.flex {
+    display: flex;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.gap-simple {
+    gap: 4px;
+}
+
+.gap-compact {
+    gap: 8px;
+}
+
+.gap-cozy {
+    gap: 16px;
+}
+
+.gap-common {
+    gap: 24px;
+}

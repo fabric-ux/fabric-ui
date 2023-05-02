@@ -1,0 +1,27 @@
+.btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+}
+
+.btn-primary {
+    color: aliceblue;
+    background-color: mediumblue;
+}
+
+.btn:hover {
+    opacity: 80%;
+}
+
+.btn-secondary {
+    background-color: chartreuse;
+}
+
+.btn-ghost {
+    background-color: #fff;
+    border: none;
+}
+
+.btn-ghost:hover {
+    background-color: mediumslateblue;
+}

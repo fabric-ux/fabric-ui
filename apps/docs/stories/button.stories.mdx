@@ -1,4 +1,4 @@
-import { Button } from "@acme/core/src";
+import { Button, Flex } from "@fabrix/core/src";
 import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs";
 
 <Meta title="Components/Button" component={Button} />
@@ -15,6 +15,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl ege
 
 <Canvas>
   <Story name="Default">
-    <Button style={{ height: 48 }}>Hello</Button>
+    <Flex direction="row" gap="compact">
+      <Button style={{ height: 48 }}>Hello from fabric ui</Button>
+      <Button type="secondary" style={{ height: 48 }}>Hello from fabric ui</Button>
+      <Button type="ghost" style={{ height: 48 }}>Hello from fabric ui</Button>
+    </Flex>
   </Story>
 </Canvas>
