@@ -1,7 +1,28 @@
 import { Button, Flex } from "@fabrix/core/src";
 import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs";
 
-<Meta title="Components/Button" component={Button} />
+<Meta
+  title="Components/Button"
+  component={Button}
+  argTypes={{
+    type: {
+      name: 'Type of Button',
+      description: 'Define button type with several styles',
+      options: ['primary', 'secondary', 'ghost', 'error', 'negative'],
+      defaultValue: 'primary',
+      control: { type: 'select' }
+    },
+    size: {
+      options: ['xs', 'sm', 'md', 'lg', 'xl', 'auto'],
+      control: { type: 'select' },
+      defaultValue: 'md'
+    },
+    label: {
+      control: { type: 'text' },
+      defaultValue: 'Button'
+    }
+  }}
+/>
 
 # Button
 
@@ -11,14 +32,17 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl ege
 
 <ArgsTable of={Button} />
 
+export const Template = args => <Button {...args}>{args.label}</Button>
+
 ## Examples
 
 <Canvas>
+  <Story name="Control">{Template.bind({})}</Story>
   <Story name="Default">
     <Flex direction="row" gap="compact">
-      <Button style={{ height: 48 }}>Hello from fabric ui</Button>
-      <Button type="secondary" style={{ height: 48 }}>Hello from fabric ui</Button>
-      <Button type="ghost" style={{ height: 48 }}>Hello from fabric ui</Button>
+      <Button>Hello from fabric ui</Button>
+      <Button type="secondary">Hello from fabric ui</Button>
+      <Button type="ghost">Hello from fabric ui</Button>
     </Flex>
   </Story>
 </Canvas>

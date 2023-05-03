@@ -1,7 +1,7 @@
 .btn {
     padding: 8px 12px;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
 }
 
 .btn-primary {
@@ -10,18 +10,51 @@
 }
 
 .btn:hover {
-    opacity: 80%;
+    opacity: 70%;
 }
 
 .btn-secondary {
-    background-color: chartreuse;
+    color: white;
+    background-color: goldenrod;
 }
 
 .btn-ghost {
     background-color: #fff;
-    border: none;
 }
 
 .btn-ghost:hover {
+    color: white;
     background-color: mediumslateblue;
+}
+
+.btn-error {
+    color: #fff;
+    background-color: crimson;
+}
+
+.btn-negative {
+    color: crimson;
+    border: 1px solid crimson;
+    background-color: #fff;
+}
+
+.size-xs {
+    height: 24px;
+    padding-block: 4px;
+}
+.size-sm {
+    height: 28px;
+    padding-block: 6px;
+}
+.size-md {
+    height: 32px;
+}
+.size-lg {
+    height: 42px;
+}
+.size-xl {
+    height: 48px;
+}
+.size-auto {
+    height: fit-content;
 }
