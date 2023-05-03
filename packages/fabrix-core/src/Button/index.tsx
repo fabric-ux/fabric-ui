@@ -1,12 +1,24 @@
 import * as React from "react";
-import ButtonPrimitive from './button';
-
+import './button.css';
 export interface ButtonProps {
   children: React.ReactNode;
+  /**
+   * Specify button type
+   */
+  type: 'primary' | 'secondary' | 'ghost' | 'error' | 'negative';
+  size: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 }
 
-export function Button(props: ButtonProps & HTMLElement) {
-  return <ButtonPrimitive {...props}>{props.children}</ButtonPrimitive>;
-}
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({ type, size, children, ...props }, ref) => {
+  return (
+    <button
+      ref={ref}
+      className={`btn btn-${type || 'primary'} size-${size || 'auto'}`}
+      {...props}
+    >
+      {children}
+    </button>
+  )
+})
 
 Button.displayName = "Button";
