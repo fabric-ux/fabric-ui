@@ -1,29 +1,13 @@
 # Turborepo Design System Starter
 
-This guide explains how to use a React design system starter powered by:
-
-- 🏎 [Turborepo](https://turbo.build/repo) — High-performance build system for Monorepos
-- 🚀 [React](https://reactjs.org/) — JavaScript library for user interfaces
-- 🛠 [Tsup](https://github.com/egoist/tsup) — TypeScript bundler powered by esbuild
-- 📖 [Storybook](https://storybook.js.org/) — UI component environment powered by Vite
-
-As well as a few others tools preconfigured:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-- [Changesets](https://github.com/changesets/changesets) for managing versioning and changelogs
-- [GitHub Actions](https://github.com/changesets/action) for fully automated package publishing
-
 ## Using this example
 
 Clone the design system example locally or [from GitHub](https://github.com/vercel/turbo/tree/main/examples/design-system):
 
 ```bash
-npx degit vercel/turbo/examples/design-system design-system
-cd design-system
+git clone https://github.com/fabric-ux/fabric-ui
+cd fabric-ui
 pnpm install
-git init . && git add . && git commit -m "Init"
 ```
 
 ### Useful Commands
@@ -79,10 +63,10 @@ tsup src/index.tsx --format esm,cjs --dts --external react
 }
 ```
 
-Run `pnpm build` to confirm compilation is working correctly. You should see a folder `acme-core/dist` which contains the compiled output.
+Run `pnpm build` to confirm compilation is working correctly. You should see a folder `fabrix-core/dist` which contains the compiled output.
 
 ```bash
-acme-core
+fabrix-core
 └── dist
     ├── index.d.ts  <-- Types
     ├── index.js    <-- CommonJS version
@@ -91,9 +75,9 @@ acme-core
 
 ## Components
 
-Each file inside of `acme-core/src` is a component inside our design system. For example:
+Each file inside of `fabrix-core/src` is a component inside our design system. For example:
 
-```tsx:acme-core/src/Button.tsx
+```tsx:fabrix-core/src/Button.tsx
 import * as React from 'react';
 
 export interface ButtonProps {
@@ -109,7 +93,7 @@ Button.displayName = 'Button';
 
 When adding a new file, ensure the component is also exported from the entry `index.tsx` file:
 
-```tsx:acme-core/src/index.tsx
+```tsx:fabrix-core/src/index.tsx
 import * as React from "react";
 export { Button, type ButtonProps } from "./Button";
 // Add new component exports here
@@ -121,13 +105,13 @@ Storybook provides us with an interactive UI playground for our components. This
 
 - Use Vite to bundle stories instantly (in milliseconds)
 - Automatically find any stories inside the `stories/` folder
-- Support using module path aliases like `@acme-core` for imports
+- Support using module path aliases like `@fabrix-core` for imports
 - Write MDX for component documentation pages
 
 For example, here's the included Story for our `Button` component:
 
 ```js:apps/docs/stories/button.stories.mdx
-import { Button } from '@acme-core/src';
+import { Button } from '@fabrix-core/src';
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 
 <Meta title="Components/Button" component={Button} />
@@ -186,10 +170,3 @@ Turborepo runs the `build` script for all publishable packages (excluding docs) 
 - Search and replace `acme` with your desired scope
 - Re-run `pnpm install`
 
-To publish packages to a private npm organization scope, **remove** the following from each of the `package.json`'s
-
-```diff
-- "publishConfig": {
--  "access": "public"
-- },
-```
