@@ -11,8 +11,12 @@ export interface FProps {
     center: boolean;
 }
 
-export default (props: FProps) => {
+const Flex = (props: FProps) => {
     return (
-        <div className={`flex ${props.direction} gap-${props.gap} ${props.center && 'center'}`} style={props.css}>{props.children}</div>
+        <div className={`flex ${props.direction} gap-${props.gap}${props.center ? ' center' : ''}`} style={props.css}>{props.children}</div>
     );
 }
+
+Flex.displayName = 'Flex';
+
+export default Flex;
