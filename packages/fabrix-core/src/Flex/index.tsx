@@ -7,10 +7,12 @@ export interface FProps {
     direction: Direction;
     gap: Gap;
     children: React.ReactNode;
+    css: React.CSSProperties;
+    center: boolean;
 }
 
 export default (props: FProps) => {
     return (
-        <div className={`flex ${props.direction} gap-${props.gap}`} {...props}>{props.children}</div>
+        <div className={`flex ${props.direction} gap-${props.gap} ${props.center && 'center'}`} style={props.css}>{props.children}</div>
     );
 }

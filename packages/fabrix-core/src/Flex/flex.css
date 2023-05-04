@@ -25,3 +25,7 @@
 .gap-common {
     gap: 24px;
 }
+.center {
+    justify-content: center;
+    align-items: center;
+}
