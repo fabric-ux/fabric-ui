@@ -1,0 +1,43 @@
+import { Flex } from "@fabrix/core/src";
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs";
+
+<Meta
+    title="Layout/Flex"
+    component={Flex}
+    argTypes={{
+        direction: {
+            defaultValue: 'row',
+            control: { type: 'inline-radio' },
+            options: ['row', 'column']
+        },
+        gap: {
+            defaultValue: 'simple',
+            control: { type: 'select' },
+            options: ['simple', 'compact', 'cozy', 'common']
+        },
+        center: {
+            defaultValue: true,
+            options: [false, true],
+            control: { type: 'inline-radio' }
+        },
+        css: {
+            control: { type: 'object' },
+            defaultValue: { border: '1px solid green', padding: '40px' }
+        }
+    }}
+/>
+
+export const Box = ({ children }) => <div style={{ padding: 8, border: '1px solid crimson' }}>{children}</div>
+export const Template = args => (
+    <Flex {...args}>
+        <Box>This is Fragment</Box>
+        <Box>This is Fragment</Box>
+        <Box>This is Fragment</Box>
+    </Flex>
+)
+
+<Canvas>
+    <Story name="Overview">
+        {Template.bind({})}
+    </Story>
+</Canvas>
