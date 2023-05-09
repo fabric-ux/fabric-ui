@@ -1,0 +1,39 @@
+.input {
+    padding: 8px 12px;
+    border-width: .1em;
+    border-radius: 8px;
+    border-color: gray;
+}
+
+.input:focus {
+    border-color: #fff;
+    outline: 0.1px solid mediumblue;
+}
+
+.input::placeholder {
+    color: gray;
+}
+
+.size-xs {
+    font-size: 9pt;
+    height: 16px;
+    padding-block: 4px;
+}
+.size-sm {
+    height: 20px;
+    padding-block: 6px;
+}
+.size-md {
+    height: 24px;
+}
+.size-lg {
+    font-size: 12pt;
+    height: 28px;
+}
+.size-xl {
+    font-size: 13pt;
+    height: 34px;
+}
+.size-auto {
+    height: fit-content;
+}

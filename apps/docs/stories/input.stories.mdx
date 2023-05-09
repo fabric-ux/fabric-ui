@@ -1,0 +1,36 @@
+import { Input } from "@fabrix/core/src";
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs";
+
+<Meta
+  title="Components/Input"
+  component={Input}
+  argTypes={{
+    type: {
+      description: 'Define button type with several styles',
+      options: ['text'],
+      defaultValue: 'primary',
+      control: { type: 'select' }
+    },
+    size: {
+        options: ['xs', 'sm', 'md', 'lg', 'xl'],
+        control: { type: 'inline-radio' },
+        defaultValue: 'sm',
+    },
+    placeholder: {
+        control: { type: 'text' },
+        defaultValue: 'Masukkan username'
+    }
+  }}
+/>
+
+# Input
+
+Buttons are clickable elements that are used to trigger actions. They communicate calls to action to the user and allow users to interact with pages in a variety of ways. Button labels express what action will occur when the user interacts with it.
+
+export const Template = args => <Input {...args} />
+
+<Canvas>
+    <Story name="Overview">
+        {Template.bind({})}
+    </Story>
+</Canvas>
